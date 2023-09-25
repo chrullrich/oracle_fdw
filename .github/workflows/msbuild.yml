@@ -44,11 +44,11 @@ jobs:
     - name: Extract Instant Client
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        7z x instantclient-basic.zip
-        7z x instantclient-sdk.zip
+        7z x -o"%TEMP%" instantclient-basic.zip
+        7z x -o"%TEMP%" instantclient-sdk.zip
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:OracleClient=${{env.GITHUB_WORKSPACE}}\instantclient_19_20 /p:PostgreSQL="C:\Program Files\PostgreSQL\14" ${{env.SOLUTION_FILE_PATH}}
+      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:OracleClient="%TEMP%\instantclient_19_20" /p:PostgreSQL="C:\Program Files\PostgreSQL\14" ${{env.SOLUTION_FILE_PATH}}
