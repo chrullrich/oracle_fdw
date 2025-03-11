@@ -10,6 +10,8 @@ on: workflow_dispatch
 env:
   # Path to the solution file relative to the root of the project.
   SOLUTION_FILE_PATH: msvc/oracle_fdw.vcxproj
+  ORA_CLIENT_MAJOR: 19
+  ORA_CLIENT_MINOR: 26
 
   # Configuration type to build.
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
@@ -31,11 +33,11 @@ jobs:
 
     - name: Download Oracle Instant Client SDK
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/1926000/instantclient-sdk-windows.x64-19.26.0.0.0dbru.zip' -OutFile instantclient-sdk.zip"
+      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/${{env.ORA_CLIENT_MAJOR}}${{env.ORA_CLIENT_MINOR}}000/instantclient-sdk-windows.x64-${{env.ORA_CLIENT_MAJOR}}.${{env.ORA_CLIENT_MINOR}}.0.0.0dbru.zip' -OutFile instantclient-sdk.zip"
       
     - name: Download Oracle Instant Client Basic
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/1926000/instantclient-basic-windows.x64-19.26.0.0.0dbru.zip' -OutFile instantclient-basic.zip"
+      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/${{env.ORA_CLIENT_MAJOR}}${{env.ORA_CLIENT_MINOR}}000/instantclient-basic-windows.x64-${{env.ORA_CLIENT_MAJOR}}.${{env.ORA_CLIENT_MINOR}}.0.0.0dbru.zip' -OutFile instantclient-basic.zip"
 
     - name: Extract Instant Client
       working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -47,4 +49,4 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:OracleClient=..\instantclient_19_20 /p:PostgreSQL="C:\Program Files\PostgreSQL\14" ${{env.SOLUTION_FILE_PATH}}
+      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:OracleClient=..\instantclient_${{env.ORA_CLIENT_MAJOR}}_${{env.ORA_CLIENT_MINOR}} /p:PostgreSQL="C:\Program Files\PostgreSQL\14" ${{env.SOLUTION_FILE_PATH}}
