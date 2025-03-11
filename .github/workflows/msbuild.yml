@@ -47,7 +47,7 @@ jobs:
 
     - name: List
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: dir /a /s
+      run: cmd /c dir /a /s
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
