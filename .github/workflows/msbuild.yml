@@ -45,12 +45,6 @@ jobs:
         7z x -aoa instantclient-basic.zip
         7z x -aoa instantclient-sdk.zip
 
-    - name: List
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: |
-        cmd /c dir "C:\Program Files"
-        cmd /c dir /a /s "C:\Program Files\PostgreSQL"
-
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
