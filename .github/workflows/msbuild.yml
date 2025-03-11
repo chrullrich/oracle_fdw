@@ -31,11 +31,11 @@ jobs:
 
     - name: Download Oracle Instant Client SDK
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/1920000/instantclient-sdk-windows.x64-19.26.0.0.0dbru.zip' -OutFile instantclient-sdk.zip"
+      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/1926000/instantclient-sdk-windows.x64-19.26.0.0.0dbru.zip' -OutFile instantclient-sdk.zip"
       
     - name: Download Oracle Instant Client Basic
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/1920000/instantclient-basic-windows.x64-19.26.0.0.0dbru.zip' -OutFile instantclient-basic.zip"
+      run: pwsh -Command "Invoke-WebRequest -Uri 'https://download.oracle.com/otn_software/nt/instantclient/1926000/instantclient-basic-windows.x64-19.26.0.0.0dbru.zip' -OutFile instantclient-basic.zip"
 
     - name: Extract Instant Client
       working-directory: ${{env.GITHUB_WORKSPACE}}
