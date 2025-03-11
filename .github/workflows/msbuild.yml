@@ -40,8 +40,8 @@ jobs:
     - name: Extract Instant Client
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        7z x instantclient-basic.zip
-        7z x instantclient-sdk.zip
+        7z x -aoa instantclient-basic.zip
+        7z x -aoa instantclient-sdk.zip
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
