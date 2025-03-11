@@ -9,7 +9,7 @@ on: workflow_dispatch
 
 env:
   # Path to the solution file relative to the root of the project.
-  SOLUTION_FILE_PATH: msvc/oracle_fdw.vcxproj
+  SOLUTION_FILE_PATH: msvc/oracle_fdw.sln
   ORA_CLIENT_MAJOR: 19
   ORA_CLIENT_MINOR: 26
 
