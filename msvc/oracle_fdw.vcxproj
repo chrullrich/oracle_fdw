@@ -98,8 +98,10 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4200;4244;4267;4389;4018;4996;4100;4127</DisableSpecificWarnings>
       <ExceptionHandling>Async</ExceptionHandling>
+    <IncludePath>$(PostgreSQL)\include\server\port\win32_msvc;$(PostgreSQL)\include\server\port\win32;$(PostgreSQL)\include\server\port;$(PostgreSQL)\include\server;$(PostgreSQL)\include\internal;$(PostgreSQL)\include;$(OracleClient)\sdk\include;$(IncludePath)</IncludePath>
     </ClCompile>
     <Link>
+    <LibraryPath>$(PostgreSQL)\lib;$(OracleClient)\sdk\lib\msvc;$(LibraryPath)</LibraryPath>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>postgres.lib;oci.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>oci.dll</DelayLoadDLLs>
@@ -115,8 +117,10 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4200;4244;4267;4389;4018;4996;4100;4127</DisableSpecificWarnings>
       <ExceptionHandling>Async</ExceptionHandling>
+    <IncludePath>$(PostgreSQL)\include\server\port\win32_msvc;$(PostgreSQL)\include\server\port\win32;$(PostgreSQL)\include\server\port;$(PostgreSQL)\include\server;$(PostgreSQL)\include\internal;$(PostgreSQL)\include;$(OracleClient)\sdk\include;$(IncludePath)</IncludePath>
     </ClCompile>
     <Link>
+    <LibraryPath>$(PostgreSQL)\lib;$(OracleClient)\sdk\lib\msvc;$(LibraryPath)</LibraryPath>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>postgres.lib;oci.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>oci.dll</DelayLoadDLLs>
@@ -133,8 +137,10 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4200;4244;4267;4389;4018;4996;4100;4127</DisableSpecificWarnings>
       <ExceptionHandling>Async</ExceptionHandling>
+    <IncludePath>$(PostgreSQL)\include\server\port\win32_msvc;$(PostgreSQL)\include\server\port\win32;$(PostgreSQL)\include\server\port;$(PostgreSQL)\include\server;$(PostgreSQL)\include\internal;$(PostgreSQL)\include;$(OracleClient)\sdk\include;$(IncludePath)</IncludePath>
     </ClCompile>
     <Link>
+    <LibraryPath>$(PostgreSQL)\lib;$(OracleClient)\sdk\lib\msvc;$(LibraryPath)</LibraryPath>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
@@ -153,8 +159,10 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4200;4244;4267;4389;4018;4996;4100;4127</DisableSpecificWarnings>
       <ExceptionHandling>Async</ExceptionHandling>
+    <IncludePath>$(PostgreSQL)\include\server\port\win32_msvc;$(PostgreSQL)\include\server\port\win32;$(PostgreSQL)\include\server\port;$(PostgreSQL)\include\server;$(PostgreSQL)\include\internal;$(PostgreSQL)\include;$(OracleClient)\sdk\include;$(IncludePath)</IncludePath>
     </ClCompile>
     <Link>
+    <LibraryPath>$(PostgreSQL)\lib;$(OracleClient)\sdk\lib\msvc;$(LibraryPath)</LibraryPath>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
