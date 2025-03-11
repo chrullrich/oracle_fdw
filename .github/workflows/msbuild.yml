@@ -47,7 +47,9 @@ jobs:
 
     - name: List
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmd /c dir /a /s
+      run: |
+	    cmd /c dir "C:\Program Files"
+	    cmd /c dir /a /s "C:\Program Files\PostgreSQL"
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
