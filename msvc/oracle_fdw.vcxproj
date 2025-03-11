@@ -174,4 +174,8 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <Target Name="Info" BeforeTargets="ClCompile">
+  	<Message Importance="high" Text="IncludePath=$(IncludePath)"/>
+  	<Message Importance="high" Text="LibraryPath=$(LibraryPath)"/>
+  </Target>
 </Project>
